@@ -1,0 +1,35 @@
+.header {
+ background-color: #86c68d;
+ padding: 0.8rem 2rem;
+ display: flex;
+ justify-content: flex-end;
+ align-items: center;
+ box-shadow: 0 2px 8px rgba(60, 145, 65, 0.2);
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ z-index: 1000;
+ width: 100%;
+ box-sizing: border-box;
+}
+
+.profile-circle {
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ background-color: #fef1e6;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ cursor: pointer;
+ transition: transform 0.3s ease;
+}
+
+.profile-circle:hover {
+ transform: scale(1.05);
+}
+
+body {
+ padding-top: 60px !important;
+}

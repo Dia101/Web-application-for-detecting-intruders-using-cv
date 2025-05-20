@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Вход</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+</head>
+
+<body>
+
+  <form method="POST">
+    <h2>Вход</h2>
+
+    <label>Логин:
+      <input name="username" required>
+    </label>
+
+    <label>Пароль:
+      <input type="password" name="password" required>
+    </label>
+    <input type="submit" value="Войти">
+
+    <div>Нет аккаунта? <a href="/register">Зарегистрироваться</a></div>
+
+    {% if token %}
+    <p><strong>JWT-токен:</strong></p>
+    <textarea readonly>{{ token }}</textarea>
+    {% endif %}
+  </form>
+</body>
+</html>

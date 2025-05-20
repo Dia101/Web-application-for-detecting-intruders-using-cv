@@ -1,0 +1,42 @@
+body {
+ background-color: #f6fdf9;
+ font-family: "Segoe UI", Tahoma, sans-serif;
+ font-size: x-large;
+ padding: 2rem;
+ color: #222;
+}
+
+h2 {
+ color: #2e7d32;
+ margin-bottom: 1rem;
+}
+
+table {
+ width: 100%;
+ border-collapse: collapse;
+ margin-top: 1rem;
+}
+
+th, td {
+ padding: 10px;
+ border: 1px solid #b2dfdb;
+ text-align: center;
+}
+
+th {
+ background-color: #a5d6a7;
+ color: #222;
+}
+
+img {
+ border-radius: 6px;
+ transition: transform 0.2s;
+}
+
+img:hover {
+ transform: scale(1.05);
+}
+
+.link {
+ margin-top: 2rem;
+}

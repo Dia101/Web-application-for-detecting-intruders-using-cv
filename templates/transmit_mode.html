@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Режим трансляции</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/transmit_mode.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+</head>
+{% include "profile_modal.html" %}
+<script src="{{ url_for('static', filename='js/profile_modal.js') }}"></script>
+
+<body>
+  <header class="header">
+    <div class="profile-circle" onclick="profileModalUsername()"></div>
+  </header>
+  <form id="add-camera-form">
+    <h2>Добавить новую камеру</h2>
+    <label>Название камеры:
+      <input type="text" name="camera_name" required>
+    </label>
+    <label>Выбрать устройство:
+      <select id="deviceSelect" style="font-size: large" required></select>
+    </label>
+    <input id="add-button" type="submit" value="Добавить">
+  </form>
+  <hr>
+  <label class="switch-label">
+    <span class="label-text">Реакция на низкую яркость</span>
+    <div class="switch">
+      <input type="checkbox" id="detectCoverToggle">
+      <span class="slider"></span>
+    </div>
+  </label>
+
+  <h3>Ваши камеры:</h3>
+  <ul id="camera-list">
+    {% for cam in cameras %}
+    <li id="cam-{{ cam[0] }}">
+      {{ cam[1] }} (ID: {{ cam[0] }}) — <a href="/transmit?camera_id={{ cam[0] }}">Транслировать</a> —
+      <button class="delete-btn" onclick="deleteCamera({{ cam[0] }})">Удалить</button>
+    </li>
+    {% else %}
+    <li>Нет добавленных камер</li>
+    {% endfor %}
+  </ul>
+  <div class="link">
+    <a href="/select">Назад к выбору режима</a>
+    <br>
+    <a href="/report">Отчеты</a>
+  </div>
+  <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
+  <script src="{{ url_for('static', filename='transmit_mode.js') }}"></script>
+</body>
+</html>

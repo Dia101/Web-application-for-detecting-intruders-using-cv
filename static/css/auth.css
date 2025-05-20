@@ -1,0 +1,158 @@
+body {
+ background-color: #9defab;
+ font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+ color: #222;
+ margin: 0;
+ padding: 0;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+}
+
+form {
+ background-color: rgb(253, 242, 232);
+ box-shadow: 10px 5px 5px rgba(60, 145, 65, 0.66);
+ padding: 2rem 2.5rem;
+ border-radius: 12px;
+ width: 350px;
+}
+
+h2 {
+ text-align: center;
+ color: #113a12;
+ margin-bottom: 1rem;
+ border-radius: 12px;
+}
+
+label {
+ display: block;
+ margin-top: 1rem;
+ font-weight: 500;
+}
+
+label input {
+ display: block;
+ width: 100%;
+ margin-top: 0.3rem;
+ padding: 0.5rem;
+ border-radius: 6px;
+ border: 1px solid #ccc;
+ box-sizing: border-box;
+}
+
+input[type="submit"] {
+ width: 100%;
+ padding: 0.6rem;
+ margin-top: 1.5rem;
+ background-color: #9defab;
+ border: none;
+ border-radius: 6px;
+ font-weight: bold;
+ color: #113a12;
+ cursor: pointer;
+ transition: 0.3s ease;
+}
+
+input[type="submit"]:hover {
+ background-color: #aaf6ad;
+}
+
+.link {
+ text-align: center;
+ margin-top: 1rem;
+ font-size: 0.95em;
+}
+
+.link a {
+ color: #2e7d32;
+ text-decoration: none;
+}
+
+.link a:hover {
+ text-decoration: underline;
+}
+
+.modal {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100vw;
+ height: 100vh;
+ background-color: rgba(0, 0, 0, 0.4);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ z-index: 1000;
+}
+
+.modal-wrapper {
+ background-color: rgb(253, 242, 232);
+ padding: 2rem;
+ border-radius: 12px;
+ box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+ width: 100%;
+ max-width: 380px;
+ text-align: center;
+}
+
+.modal-header {
+ display: flex;
+ justify-content: flex-end;
+}
+
+.close-button {
+ cursor: pointer;
+ font-size: 20px;
+ color: #333;
+}
+
+.modal-body {
+ margin-top: 1rem;
+}
+
+.modal-body p {
+ color: #113a12;
+ font-weight: 500;
+ margin-bottom: 1rem;
+}
+
+.modal-body input[type="text"] {
+ padding: 0.5rem;
+ width: 100%;
+ border-radius: 6px;
+ border: 1px solid #ccc;
+ box-sizing: border-box;
+ margin-bottom: 1rem;
+}
+
+.modal-body input[type="submit"] {
+ width: 100%;
+ background-color: #9defab;
+ border: none;
+ padding: 0.6rem;
+ border-radius: 6px;
+ font-weight: bold;
+ color: #113a12;
+ cursor: pointer;
+ transition: background-color 0.2s ease;
+}
+
+.modal-body input[type="submit"]:hover {
+ background-color: #aef4ba;
+}
+
+.modal-message {
+ margin-top: 1rem;
+ font-weight: 500;
+ color: #113a12;
+}
+
+.modal-body form {
+ box-shadow: none;
+ width: 100%;
+ box-sizing: border-box;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}

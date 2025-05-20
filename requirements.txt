@@ -1,0 +1,11 @@
+Flask
+flask-socketio
+flask-jwt-extended
+flask-wtf
+python-dotenv
+requests
+opencv-python
+psycopg2-binary
+torch
+ultralytics
+passlib[bcrypt]

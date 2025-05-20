@@ -1,0 +1,33 @@
+<div id="profileModal" class="modal hidden">
+  <div class="modal-wrapper">
+    <div class="modal-header">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+    </div>
+    <div class="modal-body">
+      <h2>Имя пользователя: <span id="modal-username"></span></h2>
+      <h3>Привязанные Telegram-аккаунты:</h3>
+      <ul id="telegram-list"></ul>
+
+      <div id="generate-section">
+        <button onclick="generateTelegramCode()">Привязать телеграм-аккаунт</button>
+        <button class="logout-button" onclick="logout()">Выйти</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="codePopupModal" class="modal hidden">
+  <div class="modal-wrapper">
+    <div class="modal-header">
+      <span class="close-button" onclick="closeCodePopup()">&times;</span>
+    </div>
+    <div class="modal-body">
+      <h3>Ваш Telegram-код:</h3>
+      <p><strong id="code-popup-value">00000000</strong></p>
+      <button onclick="copyCode()">Скопировать</button>
+      <p>Отправьте этот код боту: <a href="https://t.me/HiiPeopleBot" target="_blank">@HiiPeopleBot</a></p>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+<script src="{{ url_for('static', filename='profile_modal.js') }}"></script>

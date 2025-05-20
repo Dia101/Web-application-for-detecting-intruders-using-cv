@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Отчет</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/report.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+</head>
+{% include "profile_modal.html" %}
+<script src="{{ url_for('static', filename='js/profile_modal.js') }}"></script>
+
+<body>
+  <header class="header">
+    <div class="profile-circle" onclick="profileModalUsername()"></div>
+  </header>
+  <h2>Отчет об обнаружениях</h2> {% if events %}
+  <table>
+    <thead>
+      <tr>
+        <th>Время</th>
+        <th>Камера</th>
+        <th>Людей</th>
+        <th>Скриншот</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for event in events %}
+      <tr>
+        <td>{{ event.timestamp }}</td>
+        <td>{{ event.camera_name }}</td>
+        <td>{{ event.person_count }}</td>
+        <td>
+          <a href="{{ url_for('static', filename=event.screenshot_path) }}" target="_blank">
+            <img src="{{ url_for('static', filename=event.screenshot_path) }}" alt="событие" width="150">
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>Событий пока нет</p>
+  {% endif %}
+
+  <div class="link">
+    <a href="/select">Назад</a>
+  </div>
+</body>
+</html>

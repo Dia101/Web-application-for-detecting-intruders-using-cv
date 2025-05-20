@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Receiver</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/stream.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+</head>
+{% include "profile_modal.html" %}
+<script src="{{ url_for('static', filename='js/profile_modal.js') }}"></script>
+
+<body>
+  <header class="header">
+    <div class="profile-circle" onclick="profileModalUsername()"></div>
+  </header>
+  <h1>Receiver</h1>
+
+  <p>Трансляция с камеры ID: {{ camera_id }} <a href="/recieve_mode" onclick="history.replaceState(null, '', '/recieve_mode')">Назад к выбору камер?</a></p>
+  <img id="resultImage" style="width: 640px; height: auto;" />
+
+  <script>
+    const CAMERA_ID = "{{ camera_id | tojson }}";
+  </script>
+  <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
+  <script src="{{ url_for('static', filename='recieve.js') }}"></script>
+</body>
+</html>

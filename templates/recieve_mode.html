@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Просмотр камеры</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/transmit_mode.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+</head>
+{% include "profile_modal.html" %}
+<script src="{{ url_for('static', filename='js/profile_modal.js') }}"></script>
+
+<body>
+  <header class="header">
+    <div class="profile-circle" onclick="profileModalUsername()"></div>
+  </header>
+  {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flash-messages">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+  <h2>Выберите камеру для просмотра:</h2>
+
+  <ul>
+    {% for cam in cameras %}
+    <li id="camera-{{ cam[0] }}">
+      {{ cam[1] }} — <button onclick="checkAndOpenCamera({{ cam[0] }})">Смотреть</button>
+    </li>
+    {% else %}
+    <li>Нет доступных камер</li>
+    {% endfor %}
+  </ul>
+
+  <div class="link">
+    <a href="/select">Назад к выбору режима</a>
+    <br>
+    <a href="/report">Отчеты</a>
+  </div>
+  <script src="{{ url_for('static', filename='recieve_mode.js') }}"></script>
+</body>
+</html>

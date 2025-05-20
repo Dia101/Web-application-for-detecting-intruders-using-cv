@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Выбор режима</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/select.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+</head>
+{% include "profile_modal.html" %}
+<script src="{{ url_for('static', filename='js/profile_modal.js') }}"></script>
+
+<body>
+  <header class="header">
+    <div class="profile-circle" onclick="profileModalUsername()"></div>
+  </header>
+  <div class="container">
+    <div class="half left" onclick="window.location.href='/transmit_mode'">
+      <span>Транслировать</span>
+    </div>
+    <div class="half right" onclick="window.location.href='/recieve_mode'">
+      <span>Смотреть<br>трансляцию</span>
+    </div>
+  </div>
+</body>
+</html>
